@@ -5,11 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>image</title>
+    <style>
+        .photo{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <h1>
         Your image is 
     </h1>
-    <img src="<%= image %>" alt="">
+    <div class="profile">
+        <img class="photo" src="<%= filename %>" alt="">  
+    </div>
+   
 </body>
 </html>

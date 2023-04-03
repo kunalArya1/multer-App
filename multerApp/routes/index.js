@@ -8,7 +8,7 @@ const multer = require('multer');
 //multer things
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'images/')
+    cb(null, 'public/images')
   },
   filename: function (req, file, cb) {
     cb(null, randombytes(8).toString('hex')+ path.extname(file.originalname));
@@ -28,10 +28,10 @@ router.get('/upload',(req,res) =>{
 
 router.post('/upload', upload.single('image'), (req,res) =>{
   console.log(req.file);
-  res.send(req.file);
-  // res.render('imagepage',{
-  //   image : `/images/${req.file.filename}`
-  // })
+  // res.send(req.file);
+  res.render('imagepage',{
+    filename : `images/${req.file.filename}`
+  })
 })
 
 
